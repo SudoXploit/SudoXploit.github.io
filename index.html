@@ -1,107 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Motiranjan Barik | Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #ecf0f1;
-      color: #34495e;
-      line-height: 1.6;
-      margin: 0;
-      padding: 20px;
-    }
-    h1, h2 {
-      color: #2980b9;
-      text-align: center;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-    .intro {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .contact-info, .projects {
-      margin: 20px 0;
-      padding: 15px;
-      border: 1px solid #bdc3c7;
-      border-radius: 8px;
-      background: #f9f9f9;
-    }
-    a {
-      color: #3498db;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .motto {
-      font-style: italic;
-      color: #7f8c8d;
-      text-align: center;
-      margin-top: 30px;
-    }
-    .learning-list, .project-list {
-      list-style-type: none;
-      padding: 0;
-    }
-    .learning-list li, .project-list li {
-      background: #dff9fb;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    .learning-list li:hover, .project-list li:hover {
-      background: #c7ecee;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SudoXploit - Cybersecurity Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #007bff;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .project {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 15px;
+            flex: 1 1 calc(30% - 20px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #007bff;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .project {
+                flex: 1 1 calc(100% - 20px);
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="intro">
-      <h1>👋 Hey, I'm Motiranjan Barik (aka SudoXploit)</h1>
-      <p>🚀 Aspiring Cybersecurity Engineer | VAPT | Ethical Hacking | Red Team Ops</p>
-      <p>📍 Bengaluru, India</p>
-      <p>🎓 Ravenshaw University 🎯 Focused on Offensive Security, Application Pentesting, and CTFs</p>
-    </div>
 
-    <div class="contact-info">
-      <h2>💼 Portfolio Website</h2>
-      <p><a href="https://SudoXploit.github.io" target="_blank">SudoXploit.github.io</a></p>
-      <p>📧 Email: <a href="mailto:motiranjan.barik@example.com">motiranjan.barik@aol.com</a></p>
-      <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/motiranjanbarik" target="_blank">motiranjan-barik-72ab60155</a></p>
-      <p>💻 GitHub: <a href="https://github.com/SudoXploit" target="_blank">@SudoXploit</a></p>
-    </div>
+<header>
+    <h1>Motiranjan Barik (aka SudoXploit)</h1>
+    <p>🚀 Aspiring Cybersecurity Engineer | VAPT | Ethical Hacking | Red Team Ops</p>
+    <p>📍 Bengaluru, India</p>
+    <p>🎓 Ravenshaw University 🎯 Focused on Offensive Security, Application Pentesting, and CTFs</p>
+</header>
 
-    <h2>🧠 Currently Learning</h2>
-    <ul class="learning-list">
-      <li>Web Application Security (OWASP Top 10, Burp Suite, Recon)</li>
-      <li>Active Directory Attacks (AS-REP Roasting, BloodHound)</li>
-      <li>Vulnerability Analysis & Exploitation</li>
-      <li>Tools: Burp Suite, Nmap, Metasploit, Nikto, Hydra, TryHackMe, HackTheBox</li>
-    </ul>
+<div class="container">
+    <section>
+        <h2>💼 Portfolio Website</h2>
+        <p><a href="https://SudoXploit.github.io" target="_blank">Explore my resume, writeups, and personal projects in offensive security.</a></p>
+    </section>
 
-    <h2>📜 Featured Projects</h2>
-    <div class="projects">
-      <ul class="project-list">
-        <li>🔎 <a href="projects/dvwa-xss.html">DVWA Reflected XSS Exploit</a></li>
-        <li>🏴‍☠️ <a href="projects/tryhackme-ad.html">TryHackMe AD Lab Walkthrough</a></li>
-        <li>💾 Writeups & Tools: Coming soon...</li>
-      </ul>
-    </div>
+    <section>
+        <h2>🧠 Currently Learning</h2>
+        <ul>
+            <li>Web Application Security (OWASP Top 10, Burp Suite, Recon)</li>
+            <li>Active Directory Attacks (AS-REP Roasting, BloodHound)</li>
+            <li>Vulnerability Analysis & Exploitation</li>
+            <li>Tools: Burp Suite, Nmap, Metasploit, Nikto, Hydra, TryHackMe, HackTheBox</li>
+        </ul>
+    </section>
 
-    <p class="motto">💬 "Hack ethically. Report responsibly. Automate relentlessly."</p>
-  </div>
+    <section>
+        <h2>📜 Featured Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>🔎 DVWA Reflected XSS Exploit</h3>
+                <p>A project demonstrating the exploitation of reflected XSS vulnerabilities in DVWA.</p>
+            </div>
+            <div class="project">
+                <h3>🏴‍☠️ TryHackMe AD Lab Walkthrough</h3>
+                <p>A comprehensive walkthrough of the Active Directory lab on TryHackMe.</p>
+            </div>
+            <div class="project">
+                <h3>💾 Writeups & Tools</h3>
+                <p>Coming soon...</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>📇 Contact</h2>
+        <p>🔗 <a href="https://www.linkedin.com/in/motiranjan-barik-72ab60155" target="_blank">LinkedIn</a></p>
+        <p>💻 <a href="https://github.com/SudoXploit" target="_blank">GitHub</a></p>
+        <p>📧 Email: <a href="mailto:motiranjan.barik@aol.com">motiranjan.barik@aol.com</a></p>
+    </section>
+
+    <section>
+        <h2>💬 Motto</h2>
+        <p>"Hack ethically. Report responsibly. Automate relentlessly."</p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2023 Motiranjan Barik. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
