@@ -1,63 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SudoXploit - Cybersecurity Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
     <style>
+        /* Reset and base */
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1e2f 0%, #151622 100%);
+            color: #ddd;
+            line-height: 1.6;
         }
+
+        a {
+            color: #4fc3f7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #81d4fa;
+            text-decoration: underline;
+        }
+
         header {
-            background: #007bff;
-            color: white;
-            padding: 20px 0;
+            background: linear-gradient(45deg, #007bff, #00c6ff);
+            color: #fff;
             text-align: center;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        h2 {
-            color: #007bff;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
+            padding: 3rem 1rem;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.6);
+            position: relative;
             overflow: hidden;
-            padding: 20px;
         }
+
+        header h1 {
+            font-weight: 600;
+            font-size: 2.8rem;
+            margin: 0 0 0.3rem 0;
+            letter-spacing: 1.2px;
+            text-shadow: 1px 2px 8px rgba(0,0,0,0.4);
+        }
+        header p {
+            font-weight: 300;
+            font-size: 1.1rem;
+            margin: 0.25rem 0;
+            text-shadow: 0 0 6px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 2rem auto 3rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.43, 0.14, 0.34, 1.35);
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            color: #4fc3f7;
+            font-weight: 600;
+            border-bottom: 3px solid #00b0ff;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.8px;
+        }
+
+        ul {
+            list-style: inside disc;
+            margin: 0;
+            padding-left: 1rem;
+        }
+
         .projects {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            gap: 1.5rem;
+            justify-content: center;
         }
+
         .project {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin: 10px;
-            padding: 15px;
-            flex: 1 1 calc(30% - 20px);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: #25273c;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 195, 255, 0.3);
+            padding: 1.5rem;
+            flex: 1 1 280px;
+            color: #e0e7ff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+            border: 1.5px solid transparent;
         }
+        .project:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 195, 255, 0.6);
+            border-color: #00c6ff;
+        }
+        .project h3 {
+            margin-top: 0;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+            color: #81d4fa;
+            text-shadow: 0 0 6px #00a5e6;
+        }
+
         footer {
             text-align: center;
-            padding: 20px 0;
-            background: #007bff;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            padding: 1.5rem 1rem;
+            background: linear-gradient(45deg, #007bff, #00c6ff);
+            color: #fff;
+            font-weight: 500;
+            letter-spacing: 0.7px;
+            box-shadow: 0 -4px 12px rgba(0, 123, 255, 0.6);
+            user-select: none;
         }
-        @media (max-width: 768px) {
-            .project {
-                flex: 1 1 calc(100% - 20px);
-            }
+
+        /* Contact Links */
+        section#contact a {
+            display: inline-block;
+            margin-right: 1rem;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        section#contact a:hover {
+            border-color: #81d4fa;
+        }
+
+        /* Smooth scroll for browsers that don't support CSS scroll-behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ScrollReveal fallback styling */
+        .hidden {
+            opacity: 0;
+            transform: translateY(40px);
         }
     </style>
 </head>
@@ -71,12 +161,12 @@
 </header>
 
 <div class="container">
-    <section>
+    <section id="portfolio">
         <h2>💼 Portfolio Website</h2>
-        <p><a href="https://SudoXploit.github.io" target="_blank">Explore my resume, writeups, and personal projects in offensive security.</a></p>
+        <p><a href="https://SudoXploit.github.io" target="_blank" rel="noopener noreferrer">Explore my resume, writeups, and personal projects in offensive security.</a></p>
     </section>
 
-    <section>
+    <section id="learning">
         <h2>🧠 Currently Learning</h2>
         <ul>
             <li>Web Application Security (OWASP Top 10, Burp Suite, Recon)</li>
@@ -86,32 +176,34 @@
         </ul>
     </section>
 
-    <section>
+    <section id="projects">
         <h2>📜 Featured Projects</h2>
         <div class="projects">
-            <div class="project">
+            <article class="project" tabindex="0" aria-label="DVWA Reflected XSS Exploit Project">
                 <h3>🔎 DVWA Reflected XSS Exploit</h3>
                 <p>A project demonstrating the exploitation of reflected XSS vulnerabilities in DVWA.</p>
-            </div>
-            <div class="project">
+            </article>
+            <article class="project" tabindex="0" aria-label="TryHackMe AD Lab Walkthrough Project">
                 <h3>🏴‍☠️ TryHackMe AD Lab Walkthrough</h3>
                 <p>A comprehensive walkthrough of the Active Directory lab on TryHackMe.</p>
-            </div>
-            <div class="project">
+            </article>
+            <article class="project" tabindex="0" aria-label="Writeups and Tools Coming Soon">
                 <h3>💾 Writeups & Tools</h3>
                 <p>Coming soon...</p>
-            </div>
+            </article>
         </div>
     </section>
 
-    <section>
+    <section id="contact">
         <h2>📇 Contact</h2>
-        <p>🔗 <a href="https://www.linkedin.com/in/motiranjan-barik-72ab60155" target="_blank">LinkedIn</a></p>
-        <p>💻 <a href="https://github.com/SudoXploit" target="_blank">GitHub</a></p>
-        <p>📧 Email: <a href="mailto:motiranjan.barik@aol.com">motiranjan.barik@aol.com</a></p>
+        <p>
+            🔗 <a href="https://www.linkedin.com/in/motiranjan-barik-72ab60155" target="_blank" rel="noopener noreferrer">LinkedIn</a><br />
+            💻 <a href="https://github.com/SudoXploit" target="_blank" rel="noopener noreferrer">GitHub</a><br />
+            📧 Email: <a href="mailto:motiranjan.barik@aol.com">motiranjan.barik@aol.com</a>
+        </p>
     </section>
 
-    <section>
+    <section id="motto">
         <h2>💬 Motto</h2>
         <p>"Hack ethically. Report responsibly. Automate relentlessly."</p>
     </section>
@@ -121,5 +213,28 @@
     <p>&copy; 2023 Motiranjan Barik. All rights reserved.</p>
 </footer>
 
+<script>
+    // Scroll reveal effect for sections
+    document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll("section");
+        const options = {
+            threshold: 0.1,
+        };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+
 </body>
 </html>
+
