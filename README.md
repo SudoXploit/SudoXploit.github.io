@@ -8,7 +8,7 @@
 ---
 
 ## 💼 Portfolio Website  
-🔗 **[https://sudoxploit.github.io](https://sudoxploit.github.io)**  
+🔗 **[https://SudoXploit.github.io](https://SudoXploit.github.io)**  
 Explore my resume, writeups, and personal projects in offensive security.
 
 ---
@@ -22,8 +22,8 @@ Explore my resume, writeups, and personal projects in offensive security.
 ---
 
 ## 📜 Featured Projects
-- 🔎 [DVWA Reflected XSS Exploit](https://sudoxploit.github.io/projects/dvwa-xss.html)
-- 🏴‍☠️ [TryHackMe AD Lab Walkthrough](https://sudoxploit.github.io/projects/tryhackme-ad.html)
+- 🔎 [DVWA Reflected XSS Exploit](https://SudoXploit.github.io/projects/dvwa-xss.html)
+- 🏴‍☠️ [TryHackMe AD Lab Walkthrough](https://SudoXploit.github.io/projects/tryhackme-ad.html)
 - 💾 Writeups & Tools: Coming soon...
 
 ---
