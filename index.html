@@ -1,322 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SudoXploit - Cybersecurity Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
-  <style>
-    /* Reset and base */
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SudoXploit - Cybersecurity Portfolio</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', Arial, sans-serif;
-      background: linear-gradient(135deg, #1e1e2f 0%, #151622 100%);
-      color: #ddd;
-      line-height: 1.6;
-      scroll-padding-top: 70px;
-    }
+        header {
+            background: #333;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    a {
-      color: #4fc3f7;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-    a:hover,
-    a:focus {
-      color: #81d4fa;
-      text-decoration: underline;
-    }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
 
-    nav {
-      background: rgba(0, 0, 0, 0.85);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 10px rgba(0, 123, 255, 0.6);
-      z-index: 1000;
-    }
+        nav ul li a {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.8rem;
-      margin: 0;
-      padding: 0;
-    }
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
 
-    nav ul li {
-      font-weight: 600;
-    }
+        .intro {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            border-bottom: 1px solid #444;
+        }
 
-    nav ul li a {
-      color: #9cdfff;
-      font-size: 1rem;
-      padding: 6px 8px;
-      border-radius: 4px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
+        .intro h2 {
+            font-size: 2.5em;
+            margin: 0;
+        }
 
-    nav ul li a:hover,
-    nav ul li a:focus {
-      background-color: #00b0ff;
-      color: #fff;
-      outline: none;
-    }
+        .motto {
+            font-style: italic;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
 
-    /* Hero / Home Section */
-    #home {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 60px 1rem 0;
-      color: #fff;
-      position: relative;
-      z-index: 1;
-      overflow: hidden;
-    }
+        section {
+            padding: 40px 20px;
+            border-bottom: 1px solid #444;
+            transition: background 0.3s;
+        }
 
-    #home h1 {
-      font-weight: 700;
-      font-size: 3.8rem;
-      letter-spacing: 2px;
-      margin: 0 0 0.5rem 0;
-      text-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    }
+        section:hover {
+            background: #222;
+        }
 
-    #home p {
-      font-size: 1.3rem;
-      margin: 0 0 2rem 0;
-      font-weight: 400;
-      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
+        h2 {
+            color: #ffcc00;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 10px;
+        }
 
-    #home button {
-      background-color: #fff;
-      border: none;
-      color: #007bff;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 0.9rem 2.4rem;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 6px 18px rgba(255, 255, 255, 0.6);
-      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-      user-select: none;
-    }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-    #home button:hover,
-    #home button:focus {
-      background-color: #e0f2ff;
-      color: #0056b3;
-      outline: none;
-      transform: scale(1.07);
-    }
+        ul li {
+            margin: 10px 0;
+        }
 
-    .container {
-      max-width: 960px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
 
-    section {
-      margin-bottom: 3rem;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s cubic-bezier(0.43, 0.14, 0.34, 1.35);
-    }
+        a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+        a:hover {
+            text-decoration: underline;
+        }
 
-    h2 {
-      color: #4fc3f7;
-      font-weight: 600;
-      border-bottom: 3px solid #00b0ff;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-      letter-spacing: 0.8px;
-    }
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-    ul {
-      list-style: inside disc;
-      margin: 0;
-      padding-left: 1rem;
-    }
+        section {
+            animation: fadeIn 1s ease-in;
+        }
 
-    .projects {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .intro h2 {
+                font-size: 2em;
+            }
 
-    .project {
-      background: #25273c;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(0, 195, 255, 0.3);
-      padding: 1.5rem;
-      flex: 1 1 280px;
-      color: #e0e7ff;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
-      border: 1.5px solid transparent;
-    }
-
-    .project:hover,
-    .project:focus {
-      transform: translateY(-8px) scale(1.05);
-      box-shadow: 0 15px 30px rgba(0, 195, 255, 0.6);
-      border-color: #00c6ff;
-      outline: none;
-    }
-
-    .project h3 {
-      margin-top: 0;
-      margin-bottom: 0.6rem;
-      font-weight: 600;
-      color: #81d4fa;
-      text-shadow: 0 0 6px #00a5e6;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem 1rem;
-      background: linear-gradient(45deg, #007bff, #00c6ff);
-      color: #fff;
-      font-weight: 500;
-      letter-spacing: 0.7px;
-      box-shadow: 0 -4px 12px rgba(0, 123, 255, 0.6);
-      user-select: none;
-    }
-
-    /* Contact Links */
-    section#contact a {
-      display: inline-block;
-      margin-right: 1rem;
-      font-weight: 600;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.3s ease;
-    }
-
-    section#contact a:hover,
-    section#contact a:focus {
-      border-color: #81d4fa;
-      outline: none;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .projects {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <h1>SudoXploit</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#learning">Learning</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<nav aria-label="Main Navigation">
-  <ul>
-    <li><a href="#home" tabindex="0">Home</a></li>
-    <li><a href="#portfolio" tabindex="0">Portfolio</a></li>
-    <li><a href="#learning" tabindex="0">Learning</a></li>
-    <li><a href="#projects" tabindex="0">Projects</a></li>
-    <li><a href="#contact" tabindex="0">Contact</a></li>
-    <li><a href="#motto" tabindex="0">Motto</a></li>
-  </ul>
-</nav>
+    <section id="home">
+        <div class="intro">
+            <h2>Motiranjan Barik (aka SudoXploit)</h2>
+            <p>🚀 Aspiring Cybersecurity Engineer | VAPT | Ethical Hacking | Red Team Ops</p>
+            <p>📍 Bengaluru, India</p>
+            <p>🎓 Ravenshaw University 🎯 Focused on Offensive Security, Application Pentesting, and CTFs</p>
+            <p class="motto">"Hack ethically. Report responsibly. Automate relentlessly."</p>
+        </div>
+    </section>
 
-<section id="home" tabindex="-1" aria-label="Home section">
-  <h1>Motiranjan Barik (aka SudoXploit)</h1>
-  <p>Hack ethically. Report responsibly. Automate relentlessly.</p>
-  <button onclick="document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' })" aria-label="Explore my work">Explore My Work</button>
-</section>
+    <section id="portfolio">
+        <h2>💼 Portfolio Website</h2>
+        <p>Explore my resume, writeups, and personal projects in offensive security.</p>
+        <p><a href="https://SudoXploit.github.io" target="_blank">Visit my portfolio</a></p>
+    </section>
 
-<div class="container">
-  <section id="portfolio" tabindex="-1" aria-label="Portfolio description">
-    <h2>💼 Portfolio Website</h2>
-    <p><a href="https://SudoXploit.github.io" target="_blank" rel="noopener noreferrer">Explore my resume, writeups, and personal projects in offensive security.</a></p>
-  </section>
+    <section id="learning">
+        <h2>🧠 Currently Learning</h2>
+        <ul>
+            <li>Web Application Security (OWASP Top 10, Burp Suite, Recon)</li>
+            <li>Active Directory Attacks (AS-REP Roasting, BloodHound)</li>
+            <li>Vulnerability Analysis & Exploitation</li>
+            <li>Tools: Burp Suite, Nmap, Metasploit, Nikto, Hydra, TryHackMe, HackTheBox</li>
+        </ul>
+    </section>
 
-  <section id="learning" tabindex="-1" aria-label="Currently learning topics">
-    <h2>🧠 Currently Learning</h2>
-    <ul>
-      <li>Web Application Security (OWASP Top 10, Burp Suite, Recon)</li>
-      <li>Active Directory Attacks (AS-REP Roasting, BloodHound)</li>
-      <li>Vulnerability Analysis & Exploitation</li>
-      <li>Tools: Burp Suite, Nmap, Metasploit, Nikto, Hydra, TryHackMe, HackTheBox</li>
-    </ul>
-  </section>
+    <section id="projects">
+        <h2>📜 Featured Projects</h2>
+        <ul>
+            <li>🔎 <strong>DVWA Reflected XSS Exploit</strong> - A demonstration of exploiting reflected XSS vulnerabilities.</li>
+            <li>🏴‍☠️ <strong>TryHackMe AD Lab Walkthrough</strong> - A comprehensive guide to Active Directory attacks.</li>
+            <li>💾 <strong>Writeups & Tools</strong> - Coming soon...</li>
+        </ul>
+    </section>
 
-  <section id="projects" tabindex="-1" aria-label="Featured projects">
-    <h2>📜 Featured Projects</h2>
-    <div class="projects">
-      <article class="project" tabindex="0" aria-label="DVWA Reflected XSS Exploit Project">
-        <h3>🔎 DVWA Reflected XSS Exploit</h3>
-        <p>A project demonstrating the exploitation of reflected XSS vulnerabilities in DVWA.</p>
-      </article>
-      <article class="project" tabindex="0" aria-label="TryHackMe AD Lab Walkthrough Project">
-        <h3>🏴‍☠️ TryHackMe AD Lab Walkthrough</h3>
-        <p>A comprehensive walkthrough of the Active Directory lab on TryHackMe.</p>
-      </article>
-      <article class="project" tabindex="0" aria-label="Writeups and Tools Coming Soon">
-        <h3>💾 Writeups & Tools</h3>
-        <p>Coming soon...</p>
-      </article>
-    </div>
-  </section>
+    <section id="contact">
+        <h2>📇 Contact</h2>
+        <p>🔗 <a href="https://www.linkedin.com/in/motiranjan-barik-72ab60155" target="_blank">LinkedIn</a></p>
+        <p>💻 <a href="https://github.com/SudoXploit" target="_blank">GitHub</a></p>
+        <p>📧 Email: <a href="mailto:motiranjan.barik@aol.com">motiranjan.barik@aol.com</a></p>
+    </section>
 
-  <section id="contact" tabindex="-1" aria-label="Contact information">
-    <h2>📇 Contact</h2>
-    <p>
-      🔗 <a href="https://www.linkedin.com/in/motiranjan-barik-72ab60155" target="_blank" rel="noopener noreferrer">LinkedIn</a><br />
-      💻 <a href="https://github.com/SudoXploit" target="_blank" rel="noopener noreferrer">GitHub</a><br />
-      📧 Email: <a href="mailto:motiranjan.barik@aol.com">motiranjan.barik@aol.com</a>
-    </p>
-  </section>
+    <footer>
+        <p>© 2025 Motiranjan Barik. All rights reserved.</p>
+    </footer>
 
-  <section id="motto" tabindex="-1" aria-label="Website motto">
-    <h2>💬 Motto</h2>
-    <p>"Hack ethically. Report responsibly. Automate relentlessly."</p>
-  </section>
-</div>
-
-<footer>
-  <p>&copy; 2025 Motiranjan Barik. All rights reserved.</p>
-</footer>
-
-<script>
-  // Scroll reveal effect for sections except home which is always visible
-  document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section:not(#home)");
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => observer.observe(section));
-  });
-</script>
-
+    <script>
+        // Animation for sections
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transition = "opacity 0.5s ease-in-out";
+                section.style.opacity = 1;
+            });
+        });
+    </script>
 </body>
 </html>
