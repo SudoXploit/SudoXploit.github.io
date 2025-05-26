@@ -1,0 +1,10 @@
+motiranjan-portfolio/
+├── index.html
+├── resume.pdf         ← (put your resume here)
+├── projects/
+│   ├── dvwa-xss.html
+│   └── tryhackme-ad.html
+├── assets/
+│   └── css/
+│       └── style.css
+└── README.md
