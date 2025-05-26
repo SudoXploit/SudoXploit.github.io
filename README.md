@@ -2,7 +2,7 @@
 
 🚀 **Aspiring Cybersecurity Engineer** | VAPT | Ethical Hacking | Red Team Ops  
 📍 Bengaluru, India  
-🎓 B.Sc. ITM – Ravenshaw University, Cuttack (2021)  
+🎓 Ravenshaw University 
 🎯 Focused on Offensive Security, Application Pentesting, and CTFs
 
 ---
