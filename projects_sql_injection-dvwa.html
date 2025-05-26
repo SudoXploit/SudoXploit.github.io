@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DVWA SQL Injection - SudoXploit</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <h1>DVWA SQL Injection (Login Bypass)</h1>
+  <p><strong>Platform:</strong> Damn Vulnerable Web Application (DVWA)</p>
+  <p><strong>Vulnerability Type:</strong> SQL Injection</p>
+  
+  <h2>🧪 Objective</h2>
+  <p>Bypass authentication using an SQL injection payload on the login form (low security level).</p>
+
+  <h2>⚙️ Tools Used</h2>
+  <ul>
+    <li>Burp Suite</li>
+    <li>Firefox + DVWA Localhost</li>
+    <li>MySQL (behind the app)</li>
+  </ul>
+
+  <h2>📌 Payload</h2>
+  <pre><code>' OR 1=1 -- -
+' OR '1'='1' #
+admin' -- 
+</code></pre>
+
+  <h2>🧰 Steps</h2>
+  <ol>
+    <li>Launched DVWA and set security level to <code>low</code></li>
+    <li>Went to the <strong>Login</strong> form</li>
+    <li>Entered payload: <code>' OR 1=1 -- -</code></li>
+    <li>Successfully bypassed login and accessed admin panel</li>
+  </ol>
+
+  <h2>📖 Explanation</h2>
+  <p>The backend SQL query becomes:</p>
+  <pre><code>SELECT * FROM users WHERE username = '' OR 1=1 -- - AND password = ''</code></pre>
+  <p>The injected <code>OR 1=1</code> always evaluates to true, and the <code>-- -</code> comments out the rest of the SQL query.</p>
+
+  <h2>🛡️ Mitigation</h2>
+  <ul>
+    <li>Use parameterized queries / prepared statements</li>
+    <li>Apply server-side input validation</li>
+    <li>Implement WAF rules for common SQLi signatures</li>
+  </ul>
+
+  <p>📅 Writeup by <strong>SudoXploit</strong> – May 2025</p>
+  <p><a href="../index.html">← Back to Portfolio</a></p>
+</body>
+</html>
