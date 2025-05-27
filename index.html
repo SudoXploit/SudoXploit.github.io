@@ -28,6 +28,12 @@
             border-bottom: 2px solid #00ff00;
         }
 
+        h1 {
+            font-size: 3em; /* Increased font size */
+            font-weight: bold; /* Bold text */
+            margin: 0;
+        }
+
         nav ul {
             list-style-type: none;
             padding: 0;
@@ -59,12 +65,9 @@
             overflow: hidden;
         }
 
-        h1, h2 {
+        h2 {
             color: #00ff00;
             margin: 0;
-        }
-
-        h2 {
             border-bottom: 1px solid #00ff00;
             padding-bottom: 10px;
         }
@@ -139,6 +142,34 @@
                 margin: 10px 0;
             }
         }
+
+        /* Additional Styles for Sections */
+        .section {
+            padding: 40px;
+            border: 1px solid #00ff00;
+            margin: 20px;
+            border-radius: 5px;
+            background-color: #1a1a1a;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .command-input {
+            color: #00ff00;
+            background: none;
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 1.2em;
+        }
+
+        .command-output {
+            margin-top: 10px;
+            color: #00ff00;
+        }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -202,7 +233,48 @@
     </footer>
 
     <script>
-        // Optional: Add any additional JavaScript functionality here
+        // Command input functionality
+        const commandInput = document.createElement('input');
+        commandInput.className = 'command-input';
+        commandInput.placeholder = 'Type a command...';
+        document.body.appendChild(commandInput);
+
+        commandInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                const command = commandInput.value.toLowerCase();
+                commandInput.value = '';
+                executeCommand(command);
+            }
+        });
+
+        function executeCommand(command) {
+            const output = document.createElement('div');
+            output.className = 'command-output';
+            switch (command) {
+                case 'help':
+                    output.innerHTML = 'Available commands: help, portfolio, learning, projects, contact';
+                    break;
+                case 'portfolio':
+                    output.innerHTML = 'Navigating to Portfolio...';
+                    window.location.hash = '#portfolio';
+                    break;
+                case 'learning':
+                    output.innerHTML = 'Navigating to Learning...';
+                    window.location.hash = '#learning';
+                    break;
+                case 'projects':
+                    output.innerHTML = 'Navigating to Projects...';
+                    window.location.hash = '#projects';
+                    break;
+                case 'contact':
+                    output.innerHTML = 'Navigating to Contact...';
+                    window.location.hash = '#contact';
+                    break;
+                default:
+                    output.innerHTML = 'Command not found. Type "help" for a list of commands.';
+            }
+            document.body.appendChild(output);
+        }
     </script>
 </body>
 </html>
