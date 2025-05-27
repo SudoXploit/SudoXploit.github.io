@@ -3,40 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SudoXploit - Cybersecurity Portfolio</title>
+    <title>Motiranjan Barik - Cybersecurity Professional</title>
     <style>
-        body {
-            font-family: 'Courier New', monospace;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #000;
-            color: #00ff00;
-            overflow-x: hidden;
-            animation: backgroundAnimation 10s infinite alternate;
+            box-sizing: border-box;
         }
 
-        @keyframes backgroundAnimation {
-            0% { background-color: #000; }
-            50% { background-color: #1a1a1a; }
-            100% { background-color: #000; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            overflow-x: hidden;
         }
 
         header {
-            background: #000;
-            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 0;
             text-align: center;
-            border-bottom: 2px solid #00ff00;
+            position: relative;
+            z-index: 10;
         }
 
         h1 {
-            font-size: 3em; /* Increased font size */
-            font-weight: bold; /* Bold text */
-            margin: 0;
+            font-size: 3em;
+            animation: fadeIn 2s;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
         }
 
         nav ul {
-            list-style-type: none;
-            padding: 0;
+            list-style: none;
+            padding: 10px 0;
         }
 
         nav ul li {
@@ -54,227 +57,135 @@
             color: #ffcc00;
         }
 
-        .terminal {
-            padding: 20px;
-            border: 1px solid #00ff00;
-            margin: 20px;
-            border-radius: 5px;
-            background-color: #1a1a1a;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-            position: relative;
-            overflow: hidden;
+        section {
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
-        h2 {
-            color: #00ff00;
-            margin: 0;
-            border-bottom: 1px solid #00ff00;
-            padding-bottom: 10px;
-        }
-
-        p, ul {
-            margin: 10px 0;
-            line-height: 1.5;
+        h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #000;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            border-top: 2px solid #00ff00;
+        ul li {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            transition: transform 0.3s;
         }
 
-        a {
+        ul li:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        footer a {
             color: #00ff00;
             text-decoration: none;
         }
 
-        a:hover {
-            text-decoration: underline;
+        footer a:hover {
+            color: #ffcc00;
         }
 
-        /* Typewriter effect */
-        .typewriter {
-            overflow: hidden; /* Ensures the content is not revealed until the animation */
-            border-right: .15em solid #00ff00; /* The typwriter cursor */
-            white-space: nowrap; /* Keeps the content on a single line */
-            margin: 0 auto; /* Gives that scrolling effect */
-            letter-spacing: .15em; /* Adjusts the spacing between characters */
-            animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #00ff00; }
-        }
-
-        /* Cursor Animation */
-        .cursor {
-            display: inline-block;
-            width: 10px;
-            height: 20px;
-            background-color: #00ff00;
-            animation: blink 1s step-end infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav ul li {
-                display: block;
-                margin: 10px 0;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
             }
         }
 
-        /* Additional Styles for Sections */
-        .section {
-            padding: 40px;
-            border: 1px solid #00ff00;
-            margin: 20px;
-            border-radius: 5px;
-            background-color: #1a1a1a;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        .animated-bg {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            animation: slideIn 1s forwards;
         }
 
-        .command-input {
-            color: #00ff00;
-            background: none;
-            border: none;
-            outline: none;
-            width: 100%;
-            font-size: 1.2em;
-        }
-
-        .command-output {
-            margin-top: 10px;
-            color: #00ff00;
-        }
-
-        .hidden {
-            display: none;
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>SudoXploit</h1>
+        <h1>Motiranjan Barik</h1>
+        <h2>Cybersecurity Professional | Ethical Hacker | Red Teamer</h2>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#learning">Learning</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#specializations">Specializations</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="terminal" id="home">
-        <h2>Welcome to my Terminal</h2>
-        <p class="typewriter">Motiranjan Barik (aka SudoXploit) - Aspiring Cybersecurity Engineer</p>
-        <p>🚀 VAPT | Ethical Hacking | Red Team Ops</p>
-        <p>📍 Bengaluru, India</p>
-        <p>🎓 Ravenshaw University - Focused on Offensive Security, Application Pentesting, and CTFs</p>
-        <p class="typewriter">"Hack ethically. Report responsibly. Automate relentlessly."</p>
-        <div class="cursor"></div>
-    </div>
+    <section id="about" class="animated-bg">
+        <h3>About Me</h3>
+        <p>In a world where data is currency and networks are battlegrounds, I don't just defend systems — I infiltrate them, exploit them, and make them bulletproof.</p>
+        <p>Location: India</p>
+    </section>
 
-    <div class="terminal" id="portfolio">
-        <h2>💼 Portfolio Website</h2>
-        <p>Explore my resume, writeups, and personal projects in offensive security.</p>
-        <p><a href="https://SudoXploit.github.io" target="_blank">Visit my portfolio</a></p>
-    </div>
-
-    <div class="terminal" id="learning">
-        <h2>🧠 Currently Learning</h2>
+    <section id="specializations" class="animated-bg">
+        <h3>Specializations</h3>
         <ul>
-            <li>Web Application Security (OWASP Top 10, Burp Suite, Recon)</li>
-            <li>Active Directory Attacks (AS-REP Roasting, BloodHound)</li>
-            <li>Vulnerability Analysis & Exploitation</li>
-            <li>Tools: Burp Suite, Nmap, Metasploit, Nikto, Hydra, TryHackMe, HackTheBox</li>
+            <li>Penetration Testing</li>
+            <li>Ethical Hacking</li>
+            <li>Red Team Operations</li>
+            <li>Network Security</li>
+            <li>Post-Exploitation Mastery</li>
         </ul>
-    </div>
+    </section>
 
-    <div class="terminal" id="projects">
-        <h2>📜 Featured Projects</h2>
+    <section id="projects" class="animated-bg">
+        <h3>Projects & Labs</h3>
         <ul>
-            <li>🔎 <strong>DVWA Reflected XSS Exploit</strong> - A demonstration of exploiting reflected XSS vulnerabilities.</li>
-            <li>🏴‍☠️ <strong>TryHackMe AD Lab Walkthrough</strong> - A comprehensive guide to Active Directory attacks.</li>
-            <li>💾 <strong>Writeups & Tools</strong> - Coming soon...</li>
+            <li>Network Security & Penetration Testing Lab</li>
+            <li>Active Directory Attack Lab</li>
+            <li>DNS & DHCP Attack Vectors Lab</li>
+            <li>Wi-Fi Hacking Lab</li>
+            <li>Post-Exploitation & Persistence Techniques</li>
         </ul>
-    </div>
+    </section>
 
-    <div class="terminal" id="contact">
-        <h2>📇 Contact</h2>
-        <p>🔗 <a href="https://www.linkedin.com/in/motiranjan-barik-72ab60155" target="_blank">LinkedIn</a></p>
-        <p>💻 <a href="https://github.com/SudoXploit" target="_blank">GitHub</a></p>
-        <p>📧 Email: <a href="mailto:motiranjan.barik@aol.com">motiranjan.barik@aol.com</a></p>
-    </div>
-
-    <footer>
-        <p>© 2025 Motiranjan Barik. All rights reserved.</p>
+    <footer id="contact" class="animated-bg">
+        <h3>Connect With Me</h3>
+        <p><a href="https://www.linkedin.com/in/motiranjan-barik-72ab60155">LinkedIn</a></p>
+        <p><a href="https://github.com/SudoXploit">GitHub</a></p>
+        <p>Quote: "Hack the planet. Not to destroy — but to make it unbreakable."</p>
     </footer>
 
     <script>
-        // Command input functionality
-        const commandInput = document.createElement('input');
-        commandInput.className = 'command-input';
-        commandInput.placeholder = 'Type a command...';
-        document.body.appendChild(commandInput);
-
-        commandInput.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                const command = commandInput.value.toLowerCase();
-                commandInput.value = '';
-                executeCommand(command);
-            }
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("Welcome to Motiranjan Barik's Cybersecurity Portfolio!");
         });
-
-        function executeCommand(command) {
-            const output = document.createElement('div');
-            output.className = 'command-output';
-            switch (command) {
-                case 'help':
-                    output.innerHTML = 'Available commands: help, portfolio, learning, projects, contact';
-                    break;
-                case 'portfolio':
-                    output.innerHTML = 'Navigating to Portfolio...';
-                    window.location.hash = '#portfolio';
-                    break;
-                case 'learning':
-                    output.innerHTML = 'Navigating to Learning...';
-                    window.location.hash = '#learning';
-                    break;
-                case 'projects':
-                    output.innerHTML = 'Navigating to Projects...';
-                    window.location.hash = '#projects';
-                    break;
-                case 'contact':
-                    output.innerHTML = 'Navigating to Contact...';
-                    window.location.hash = '#contact';
-                    break;
-                default:
-                    output.innerHTML = 'Command not found. Type "help" for a list of commands.';
-            }
-            document.body.appendChild(output);
-        }
     </script>
 </body>
 </html>
