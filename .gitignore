@@ -1,0 +1,33 @@
+# Logs and system files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Node modules (if you ever use Node.js)
+node_modules/
+
+# Env files / secrets
+.env
+.env.local
+
+# OS junk
+__MACOSX/
+ehthumbs.db
+
+# IDE settings
+.vscode/
+.idea/
+
+# Compiled files
+*.class
+*.pyc
+*.o
+*.out
+
+# Git backups and conflicts
+*.orig
+*.swp
+
+# XAMPP-related files (if you're testing DVWA here)
+xampp/
